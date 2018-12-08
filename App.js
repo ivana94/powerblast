@@ -2,11 +2,21 @@ import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
+import nodejs from 'nodejs-mobile-react-native';
+
 
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
   };
+
+  componentWillMount() {
+        console.log(this);
+        // nodejs.start('main.js');
+        // nodejs.channel.addListener('message', (msg) => {
+        //     alert('From node: ' + msg);
+        // }, this );
+  }
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
